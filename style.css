@@ -1,189 +1,119 @@
 body {
-    margin: 0;
-    padding: 0;
-    width: 100%;
-    min-height: 100vh;
-    height: 100%;
-  }
-  
-  h1,
-  h2,
-  h3,
-  h4,
-  h5,
-  h6,
-  p {
-    padding: 0;
-    margin: 0;
-  }
-  
-  *{
-      box-sizing: border-box;
-  }
-  
-  .background {
-    height: 100vh;
-    width: 100%;
-    background-image: url('./img/ku.png');
-    /* position:relative; */
-    background-position: center;
-    background-repeat: no-repeat;
-    background-size: cover;
-  }
-  
-  
-  .contents {
-    position: absolute;
-    /* z-index: 20; */
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    color: white;
-  }
-  .itmeet {
-    /* display: flex;  */
-    color: #fff;
-    font-family: Arial;
-    font-size: 44px;
-    font-style: normal;
-    font-weight: 400;
-    line-height: normal;
-    top:210px;
-    right:634px;
-    bottom:763px;
-    left:633px;
-    text-align: center;
-    
-  }
-  
-  .coming {
-    /* display:flex; */
-    color: #fff;
-    font-family: 'Inter', sans-serif;
-    text-align: center;
-    font-size: 98px;
-    font-style: normal;
-    font-weight: 900;
-    line-height: normal;
-    top:261px;
-    right:354px;
-    bottom:354px;
-    left:644px;
-    text-align: center;
-    width: 732px;
-    height: 119px;
-
-  }
-
-
-
-
-
-
-  /* logo of kucc and ku along with the rectangle  */
-  .rectangle
-  {
-    display:flex;
-    position:absolute;
-    z-index: 10;
-    width: 397px;
-    height: 163px;
-    flex-shrink: 0;
-    background: #FFF;
-    border-radius: 40px;
-    align-items: center;
-    top: 37px;
-    right:52px;
-
-    
-  }
-  .image-container {
-   
-    display: flex;
-    justify-items: center;
-    align-items: center;
-    margin: 20px;
+  margin: 0;
+  padding: 0;
+  width: 100%;
+  min-height: 100vh;
+  height: 100%;
+  color: #fff;
+  text-align: center;
+  font-family: "Inter", sans-serif;
 }
 
-
-.rectangle img:nth-child(1) {
-    width: 160px;
-    height: 130px;
-    flex-shrink: 0;
-    /* background: lightgray 50% / cover no-repeat; */
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p {
+  padding: 0;
+  margin: 0;
 }
 
-.rectangle img:nth-child(2) {
-
-width: 124px;
-height: 124px;
-flex-shrink: 0;
-/* background: lightgray 50% / cover no-repeat; */
+* {
+  box-sizing: border-box;
 }
 
+.background {
+  min-height: 100vh;
+  width: 100%;
+  background-image: url("./img/ku.png");
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
 
+.positioning {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  padding: 30px 60px;
+}
 
+.rectangle {
+  display: flex;
+  background: #fff;
+  border-radius: 40px;
+  width: fit-content;
+  padding: 16px;
+  gap: 12px;
+  align-self: flex-end;
+}
+.rectangle img {
+  height: 120px;
+  width: auto;
+}
 
+.titles {
+  margin: 0px;
+}
+.titles p {
+  font-family: Arial;
+  font-size: 44px;
+  font-style: normal;
+  font-weight: 400;
+}
+
+.titles h1 {
+  /* display:flex; */
+  font-size: 98px;
+  font-style: normal;
+  font-weight: 900;
+}
+
+.countdown {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: center;
+  gap: 24px;
+}
+
+/* for square boxes */
+.countdown div {
+  width: 257px;
+  border-radius: 30px;
+  padding: 30px 0;
+  background: white;
+  color: black;
+  display: flex;
+  flex-direction: column;
+}
 
 /* for all the links  */
 .links {
-    display: flex;
-    z-index: 10;
-    align-items: center;
-    margin: 45px;
-    right:62px;
-    bottom:60px;
-    position:absolute
+  display: flex;
+  align-self: flex-end;
+  gap: 20px;
+  align-items: center;
+  margin: 45px;
+  right: 62px;
+  bottom: 60px;
 }
 
 .icon {
-    width: 64x; 
-    height: 64px;
-    flex-shrink: 0;
+  width: 32px;
+  height: 32px;
+  flex-shrink: 0;
 }
-
 
 .icon:hover {
-    cursor: pointer;
-    transform: scale(1.1);
+  cursor: pointer;
+  transform: scale(1.1);
 }
-.tm{
-    justify-content: center;
-    display: flex;
-    text-align: centre;
-    margin:30px;
-}
-.Time 
-{
-    display:flex;
-    position: absolute;
-    top:441px;
-    bottom:318px;
-    left:27px;
-    right:28px; 
-}
-/* for square boxes */
-.time {
-    width: 257px;
-    height: 265px;
-    border-radius: 30px;
-    background: #D9D9D9;
-    border: 30px solid #D9D9D9;
-    position: relative;
-    display: inline-block;
-    margin: 25px; 
-    
-  } 
 
-  .label {
-    position: absolute;
-    bottom: 31px; /* Adjust the distance from the bottom */
-    left: 50%;
-    transform: translateX(-50%); /* Center the label horizontally */
-    color: #000;
-    font-family: Arial;
-    font-size: 44px;
-    font-style: normal;
-    font-weight: 400;
-    line-height: normal;
+@media screen and (min-width: 1130px) {
+  .titles {
+    margin-top: -30px;
   }
+}

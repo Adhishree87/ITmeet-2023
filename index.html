@@ -1,70 +1,97 @@
 <!DOCTYPE html>
 <html lang="en">
-
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@700&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="style.css">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link
+      b4a43e6205c7b6b7b324a111bba08f1b6b469a7erel="preconnect"
+      href="https://fonts.gstatic.com"
+      crossorigin
+    />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@700&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="style.css" />
     <title>IT MEET 2023</title>
-</head>
+  </head>
 
-<body>
-    <div class="background"></div>
+  <body>
+    <div class="background positioning">
+      <div class="rectangle">
+        <img src="img/kucc.png" alt="kucc logo" />
+        <img src="img/kulogo.png" alt="ku logo" />
+      </div>
+      <div class="titles">
+        <p>IT MEET</p>
+        <h1>COMING SOON</h1>
+      </div>
 
-    
-    <div class="rectangle">
-        <div class="image-container">
-            <img src="img/kucc.png" alt="kucc logo">
+      <div class="countdown">
+        <div>
+          <h1 id="day"></h1>
+          <p>Day</p>
         </div>
-        <div class="image-container">
-            <img src="img/kulogo.png" alt="ku logo">
+        <div>
+          <h1 id="hour">00</h1>
+          <p>Hour</p>
         </div>
+        <div>
+          <h1 id="mins">00</h1>
+          <p>Mins</p>
+        </div>
+        <div>
+          <h1 id="secs">00</h1>
+          <p>Secs</p>
+        </div>
+      </div>
+
+      <div class="links">
+        <a href="https://www.discord.com" target="_blank">
+          <img class="icon" src="img/discord.png" alt="Discord" />
+        </a>
+        <a href="https://www.facebook.com/kucc1997/" target="_blank">
+          <img class="icon" src="img/facebook.png" alt="Facebook" />
+        </a>
+        <a href="https://www.instagram.com/kucc97/?hl=en" target="_blank">
+          <img class="icon" src="img/instagram.png" alt="Instagram" />
+        </a>
+      </div>
     </div>
 
-    
-        <div class="links">
-            <a href="https://www.discord.com" target="_blank">
-                <img class="icon" src="img/discord.png" alt="Discord">
-            </a>
-            <a href="https://www.facebook.com/kucc1997/" target="_blank">
-                <img class="icon" src="img/facebook.png" alt="Facebook">
-            </a>
-            <a href="https://www.instagram.com/kucc97/?hl=en" target="_blank">
-                <img class="icon" src="img/instagram.png" alt="Instagram">
-            </a>
-        </div>
-    
-    
+    <script>
+      const targetDate = new Date("2023-08-12");
+      let day = document.getElementById("day");
+      let hour = document.getElementById("hour");
+      let mins = document.getElementById("mins");
+      let secs = document.getElementById("secs");
 
-    
-    <div class="contents">
-        <div class="itmeet">IT MEET</div>
-        <div class="coming">COMING SOON</div>
-       
-        </div>
-        <div class="Time">
-        <div class="time">
-            <div class="label">Day</div>
-          </div>
-          <div class="time">
-            <div class="label">Month</div>
-          </div>
-          <div class="time">
-            <div class="label">Hour</div>
-          </div>
-          <div class="time">
-            <div class="label">Minute</div>
-          </div>
-          <div class="time">
-            <div class="label">Second</div>
-          </div>
-        </div>
-    </div>
+      day.textContent = "00";
+      const currentDate = targetDate - new Date();
+      day.textContent = parseInt(
+        currentDate / (1000 * 60 * 60 * 24)
+      ).toString();
+      hour.textContent =
+        parseInt((currentDate / (1000 * 60 * 60)) % 24) < 10
+          ? "0" + parseInt((currentDate / (1000 * 60 * 60)) % 24)
+          : parseInt((currentDate / (1000 * 60 * 60)) % 24).toString;
+      mins.textContent = parseInt((currentDate / (1000 * 60)) % 60).toString();
+      secs.textContent = parseInt((currentDate / 1000) % 60).toString();
 
-
-</body>
-
+      setInterval(() => {
+        const currentDate = targetDate - new Date();
+        day.textContent = parseInt(
+          currentDate / (1000 * 60 * 60 * 24)
+        ).toString();
+        hour.textContent = parseInt(
+          (currentDate / (1000 * 60 * 60)) % 24
+        ).toString();
+        mins.textContent = parseInt(
+          (currentDate / (1000 * 60)) % 60
+        ).toString();
+        secs.textContent = parseInt((currentDate / 1000) % 60).toString();
+      }, 1000);
+    </script>
+  </body>
 </html>
