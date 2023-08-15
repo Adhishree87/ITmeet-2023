@@ -1,5 +1,15 @@
-body{
+body {
   margin: 0;
   padding: 0;
-  /* background-color: black; */
+  background-color: rgba(77, 82, 117, 255);
+}
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p {
+  padding: 0;
+  margin: 0;
 }
