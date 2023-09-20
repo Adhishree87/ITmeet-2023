@@ -34,7 +34,7 @@ export default function P4() {
                     <h3>Interested in Sponsoring?</h3>
                     <p>Email us at</p>
                     <i style={{ color: "white" }} className="fa fa-envelope"></i>&nbsp;&nbsp;
-                    <a href="mailto:kucc@ku.edu.np?Subject=">{data.email}</a>
+                    <a href="mailto:itmeet@ku.edu.np?Subject=">{data.email}</a>
                 </div>
 
                 {/* {sponsor.some(value => value.tire === "gold") ? <div className="row align-items-center">

@@ -24,7 +24,7 @@ const Slider = (props) => {
     };
     return (
         <Carousel
-            showDots={true}
+            showDots={false}
             responsive={responsive}
             infinite={true}
             dotListClass="custom-dot-list-style"
