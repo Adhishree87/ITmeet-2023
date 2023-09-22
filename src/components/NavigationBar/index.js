@@ -12,6 +12,8 @@ export default function NavigationBar() {
         return setLocation(false)
     }, [window.location])
 
+    const [isMenuActive, setIsMenuActive] = useState(false);
+
 
     const handleScroll = () => {
         const scrollPosition = window.scrollY;
@@ -29,6 +31,10 @@ export default function NavigationBar() {
             document.getElementById("scrollUp").style.display = 'block';
         }
     };
+
+    const handleMenuClick = () =>{
+        setIsMenuActive(current => !current)
+    }
 
     useEffect(() => {
         handleScroll();
@@ -52,16 +58,16 @@ export default function NavigationBar() {
                         <img className="logo-image" src={logo} />
                     </a>
                 </div>
-                <a href="#menu" className="menu-link"><i className="fa fa-bars"></i></a>
-                <nav id="menu" className="main-nav" role="navigation">
-                    <ul className="main-menu">
-                        <li><a href="/#section1">Home</a></li>
-                        <li><a href="/#section2">About</a></li>
-                        <li><a href="/allEvents">Events</a></li>
-                        <li><a href="/#preevents">Pre Events</a></li>
-                        <li><a href="/#section4">Sponsors</a></li>
-                        <li><a href='/#faq'>FAQ</a></li>
-                        <li><a href="/#section5">Contact</a></li>
+                <a onClick={handleMenuClick} className={isMenuActive ? "menu-link active": "menu-link"}><i className="fa fa-bars"></i></a>
+                <nav id="menu" className={isMenuActive ? "main-nav active":"main-nav inactive"} role="navigation">
+                    <ul className="main-menu" onClick={handleMenuClick} >
+                        <li><a href="/#section1"  >Home</a></li>
+                        <li><a href="/#section2"  >About</a></li>
+                        <li><a href="/allEvents"  >Events</a></li>
+                        <li><a href="/#preevents"  >Pre Events</a></li>
+                        <li><a href="/#section4"  >Sponsors</a></li>
+                        <li><a href='/#faq'  >FAQ</a></li>
+                        <li><a href="/#section5"  >Contact</a></li>
                     </ul>
                 </nav>
             </header>

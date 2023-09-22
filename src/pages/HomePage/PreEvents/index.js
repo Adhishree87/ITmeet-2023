@@ -41,6 +41,7 @@ export default function PreEvents() {
           {preEvents.map((element, index) => {
             if (index < 3)
               return (
+                <React.Fragment key={index}>
                 <div
                   className="card"
                   onClick={() => {
@@ -74,17 +75,32 @@ export default function PreEvents() {
                   </div>
                   <img src={element.photo} alt={element.title} />
                 </div>
+                </React.Fragment>
               );
           })}
           <span className="overlay" />
         </div>
-        <a
+        {/* <a
           className="viewallbtn wow animate__fadeInUp"
           data-wow-duration="1s"
           href="/allpreEvents"
         >
           View all Events <i className="fa fa-angle-double-right"></i>
-        </a>
+        </a> */}
+
+        <a href='/allpreEvents'>
+                <div className="container-fluid">
+                    <div className="row roww">
+                        <div className="col-md-12">
+                            <div className="boxed-button">
+                                <h2 className="wow animate__bounceIn" data-wow-duration="1s">
+                                    View All Events
+                                </h2>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                </a>
       </section>
     </div>
   );

@@ -50,18 +50,18 @@ export default function P3() {
                             event.map(element => {
 
                                 return (
-                                    <div class="item">
+                                    <div className="item" key={element.id}>
                                         <img src={element.photo} alt="Event #2" />
-                                        <div class="down-content">
+                                        <div className="down-content">
                                             <h4>{element.title}</h4>
                                             <p>
                                                 {element.description}
                                             </p>
-                                            <div class="more-btn">
+                                            <div className="more-btn">
                                                 <div onClick={() => {
                                                     navigate(`/event/${element.title}`)
                                                 }}>
-                                                    More <i class="fa fa-angle-double-right"></i>
+                                                    More <i className="fa fa-angle-double-right"></i>
                                                 </div>
                                             </div>
                                         </div>
@@ -71,11 +71,24 @@ export default function P3() {
                         }
                     </Slider>
                 </div>
-                <a
+                {/* <a
                     className="viewallbtn wow animate__fadeInUp"
                     data-wow-duration="1s"
                     href="/allEvents"
                 >View all Events <i className="fa fa-angle-double-right"></i>
+                </a> */}
+                <a href='/allEvents'>
+                <div className="container-fluid">
+                    <div className="row roww">
+                        <div className="col-md-12">
+                            <div className="boxed-button">
+                                <h2 className="wow animate__bounceIn" data-wow-duration="1s">
+                                    View All Events
+                                </h2>
+                            </div>
+                        </div>
+                    </div>
+                </div>
                 </a>
             </section >
         </div>

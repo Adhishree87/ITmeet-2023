@@ -83,9 +83,9 @@ export default function Footer() {
                             style={{ borderTop: "1px solid white" }}
                         >
                             <p>
-                                Copyright <i className="fa fa-copyright"></i> {data.year}
+                                Copyright  <i className="fa fa-copyright"></i> {data.year}
                                 <a href={data.webLink}
-                                >Kathmandu University Computer Club.</a
+                                > Kathmandu University Computer Club. </a
                                 >
                                 All Rights Reserved.
                             </p>

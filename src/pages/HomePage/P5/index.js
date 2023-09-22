@@ -1,8 +1,9 @@
 import React, { useContext, useEffect, useState } from "react";
-import { MapContainer, TileLayer, useMap, Marker, Popup } from "react-leaflet";
+import { MapContainer, TileLayer, useMap, Marker, Popup, } from "react-leaflet";
 import "leaflet/dist/leaflet.css";
 import "./P5.sass";
 import { databaseContext } from "../../../context/databaseContext/databse.context";
+import {iconITMeet} from "./icons";
 
 export default function P5() {
   const center = [27.6227443, 85.5310493];
@@ -21,7 +22,10 @@ export default function P5() {
         alert(err);
       });
   }, []);
+
+  
   return (
+    
     <div className="P5">
       <section
         className="section contact"
@@ -42,6 +46,8 @@ export default function P5() {
               <div className="faq-section mb-100">
                 <div className="accordion" id="faqAccordian">
                   {qna.map((element, index) => (
+                <React.Fragment key={index}>
+
                     <div
                       className="accordian-item card wow animate__fadeInUp"
                       data-wow-duration="1s"
@@ -74,6 +80,7 @@ export default function P5() {
                         </div>
                       </div>
                     </div>
+                    </React.Fragment>
                   ))}
                 </div>
               </div>
@@ -161,7 +168,7 @@ export default function P5() {
                 attribution='&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'
                 url="https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png"
               />
-              <Marker position={center}>
+              <Marker position={center} icon={iconITMeet}>
                 <Popup>
                   Kathmandu University <br /> IT Meet Venue.
                 </Popup>
